@@ -1,0 +1,678 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300..700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F9F8EC;
+    font-family: "Space Grotesk", sans-serif;
+    overflow-x: hidden; 
+}
+
+.seccionindex{
+    background-image: url(./imagenes/fondo\ de\ pagina\ web.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.footerfinal{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.footerfinal p{
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    bottom: 0;
+    margin-left: 4%;
+    margin-top: 27%;
+    color: #F9F8EC;
+    background-color: #769BA8;
+}
+
+nav{
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px; /* Reduce el espacio horizontal entre elementos */
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px; /* Reduce el padding para espaciar menos los enlaces */
+    font-size: 18px; /* Reducir el tamaño de la fuente */
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.card {
+    margin-top: 50px;
+}
+
+.card p{
+    font-size: 15px;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        margin-top: 20px;
+    }
+}
+ 
+
+/* Media query para dispositivos con un ancho máximo de 600px */
+@media only screen and (max-width: 680px) {
+    nav ul li {
+        margin: 0 10px; /* Reduce el espacio horizontal entre elementos */
+    }
+
+    nav ul li a {
+        padding: 6px 10px; /* Reduce el padding para espaciar menos los enlaces */
+        font-size: 13px; /* Reducir el tamaño de la fuente */
+    }
+}
+
+h1{
+    margin-left: 60px;
+    margin-top: 70px;
+    font-size: 80px;
+    font-family:"Space Grotesk", sans-serif;
+}
+
+@media only screen and (max-width: 680px) {
+    h1 {
+        font-size: 10vw;
+        margin-left: 10px; 
+        margin-top: 10%;
+    }
+}
+
+p{
+    margin-left: 90%;
+    font-size: 25px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.introduccion{
+    top: 80px;
+}
+
+.seccionhistoria{
+    background-color: #F9F8EC;
+}
+
+.introduccionhistoria h1{
+    margin-left: 60px;
+    margin-top: 70px;
+    font-size: 60px;
+    font-family:"Space Grotesk", sans-serif;
+}
+
+.introduccion h3{
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 70px;
+    line-height: 2;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    columns: 2;
+}
+/*
+.videopresentacion{
+    width: 100px;
+    height: 100px;
+    margin-left: 50%;
+}
+*/
+@media only screen and (max-width: 680px) {
+    p{
+        margin-left: 75%;
+    }
+
+    h2, h3 {
+        margin-left: 2%; /* Ajustar el margen izquierdo para pantallas pequeñas */
+    }
+
+    .cuadro1 {
+        margin-left: 50%; /* Ajustar el margen izquierdo para pantallas pequeñas */
+    }
+}
+
+
+@media only screen and (max-width: 680px) {
+    p{
+        margin-left: 75%;
+    }
+}
+
+.seccionartistas{
+    background-image: url(./imagenes/cuadro2.jpeg);
+    background-size:auto;
+    background-position: center; 
+    background-repeat: repeat; 
+    background-attachment: fixed;
+}
+
+.introduccionartistas h1 {
+    margin-left: 55px;
+    margin-right: 55px;
+    margin-top: 70px;
+    font-size: 80px;
+    font-family: "Space Grotesk", sans-serif;
+    text-align: center;
+}
+
+.artistas {
+    margin-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cuadrado {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.cuadrado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cuadrado::after {
+    content: attr(data-artista);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: "Space Grotesk", sans-serif;
+    text-align: center;
+}
+
+.cuadrado:hover::after {
+    opacity: 1;
+}
+
+/* Pseudo-elemento para el fondo transparente */
+.cuadrado::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(249, 248, 236, 0.7); /* Color con transparencia */
+    transition: background-color 0.3s ease; /* Transición suave */
+    opacity: 0; /* Inicialmente oculto */
+}
+
+.cuadrado:hover::before {
+    opacity: 1; /* Mostrar el fondo transparente al hacer hover */
+}
+
+.seccionartista1{
+    background-color: #EFD425;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.introduccionartista1 h1{
+    margin-left: 10px;
+    font-size: 60px;
+    font-family:"Space Grotesk", sans-serif;
+}
+.seccionartista2{
+    background-color: #EFD425;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.introduccionartista2 h1{
+    margin-left: 10px;
+    font-size: 60px;
+    font-family:"Space Grotesk", sans-serif;
+}
+
+.seccionartista3{
+    background-color: #EFD425;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.introduccionartista3 h1{
+    margin-left: 10px;
+    font-size: 60px;
+    font-family:"Space Grotesk", sans-serif;
+}
+
+.seccionartista4{
+    background-color: #EFD425;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.introduccionartista4 h1{
+    margin-left: 10px;
+    font-size: 60px;
+    font-family:"Space Grotesk", sans-serif;
+}
+
+.seccionartista5{
+    background-color: #EFD425;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.introduccionartista5 h1{
+    margin-left: 10px;
+    font-size: 60px;
+    font-family:"Space Grotesk", sans-serif;
+}
+
+@media only screen and (max-width: 680px) {
+    .introduccionartistas h1 {
+        font-size: 10vw;
+        margin-left: 10px; 
+        margin-top: 10%;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    p{
+        margin-left: 75%;
+    }
+}
+
+.seccionobras{
+    background-color: #DA483F;
+}
+
+.navegacionobras a{
+    color: #F9F8EC;
+}
+
+.introduccionobras h1{
+    margin-left: 55px;
+    margin-right: 55px;
+    margin-top: 70px;
+    font-size: 70px;
+    font-family:"Space Grotesk", sans-serif;
+    text-align: center;
+    color: #F9F8EC;
+}
+
+h5{
+    margin-top: 4%;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.card {
+    display:flexbox; /* Activa el modelo de caja flexible */
+    flex-direction: wrap; /* Coloca los elementos en columnas */
+    justify-content: center; /* Alinea verticalmente los elementos */
+    align-items: center; /* Alinea horizontalmente los elementos */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-left: 40%;
+    margin-top: 100px;
+}
+.card{
+    margin-left: 40px;
+    margin-right: 40px;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.card p{
+    margin-top: 2%;
+    margin-left: auto;
+    font-size: 15px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+@media only screen and (max-width: 680px) {
+    h5{
+        margin-left: 10px;
+        font-size: 15px;
+    }
+}
+
+.seccionhabitos{
+    background-image: url(./imagenes/fondo\ de\ HABITOS.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+}
+
+.introduccionhabitos h1{
+    margin-left: 55px;
+    margin-right: 55px;
+    margin-top: 70px;
+    font-size: 60px;
+    font-family:"Space Grotesk", sans-serif;
+    text-align: center;
+}
+
+.contenedortexto h6{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.habito1 img{
+    width: 350px;
+    height: 200px;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0px 0px 10px rgba(255, 183, 0, 0.5);
+    border-radius: 10px;
+}
+
+.habito1{
+    display: flex; /* Utilizamos flexbox para centrar verticalmente */
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    height: 65vh; /* Ajustamos la altura para que ocupe toda la pantalla */
+}
+
+.seccionhabito1{
+    background-color: #F9F8EC;
+    color: black;
+}
+
+.seccionhabito1 a{
+    color: black;
+}
+
+.habito2 img{
+    width: 350px;
+    height: 200px;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0px 0px 10px rgba(255, 183, 0, 0.5);
+    border-radius: 10px;
+
+}
+
+.habito2{
+    display: flex; /* Utilizamos flexbox para centrar verticalmente */
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    height: 65vh; /* Ajustamos la altura para que ocupe toda la pantalla */
+}
+
+.seccionhabito2{
+    background-color: #F9F8EC;
+    color: black;
+}
+
+.seccionhabito2 a{
+    color: black;
+}
+
+.habito3 img{
+    width: 350px;
+    height: 200px;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0px 0px 10px rgba(255, 183, 0, 0.5);
+    border-radius: 10px;
+}
+
+.habito3{
+    display: flex; /* Utilizamos flexbox para centrar verticalmente */
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    height: 65vh; /* Ajustamos la altura para que ocupe toda la pantalla */
+}
+
+.seccionhabito3{
+    background-color: #F9F8EC;
+    color: black;
+}
+
+.seccionhabito3 a{
+    color: black;
+}
+
+.habito4 img{
+    width: 180px;
+    height: 250px;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0px 0px 10px rgba(255, 183, 0, 0.5);
+    border-radius: 10px;
+}
+
+.habito4 {
+    display: flex; /* Utilizamos flexbox para centrar verticalmente */
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    height: 65vh; /* Ajustamos la altura para que ocupe toda la pantalla */
+}
+
+.seccionhabito4{
+    background-color: #F9F8EC;
+    color: black;
+}
+
+.seccionhabito4 a{
+    color:black;
+}
+
+.habito5 img{
+    width: 350px;
+    height: 200px;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0px 0px 10px rgba(255, 183, 0, 0.5);
+    border-radius: 10px;
+}
+
+.habito5{
+    display: flex; /* Utilizamos flexbox para centrar verticalmente */
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    height: 65vh; /* Ajustamos la altura para que ocupe toda la pantalla */
+}
+
+.seccionhabito5{
+    background-color: #F9F8EC;
+    color: black;
+}
+
+.seccionhabito5 a{
+    color: black;
+}
+
+.habito6 img{
+    width: 350px;
+    height: 200px;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0px 0px 10px rgba(255, 183, 0, 0.5);
+    border-radius: 10px;
+}
+
+.habito6{
+    display: flex; /* Utilizamos flexbox para centrar verticalmente */
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    height: 65vh; /* Ajustamos la altura para que ocupe toda la pantalla */
+}
+
+.seccionhabito6{
+    background-color: #F9F8EC;
+    color: black;
+}
+
+.seccionhabito6 a{
+    color: black;
+}
+
+.habito7 img{
+    width: 350px;
+    height: 200px;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0px 0px 10px rgba(255, 183, 0, 0.5);
+    border-radius: 10px;
+}
+
+.habito7{
+    display: flex; /* Utilizamos flexbox para centrar verticalmente */
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    height: 65vh; /* Ajustamos la altura para que ocupe toda la pantalla */
+}
+
+.seccionhabito7{
+    background-color: #F9F8EC;
+    color:black;
+}
+.seccionhabito7 a{
+    color: black;
+}
+
+h6{
+    font-size: 20px;
+    font-family: "Space Grotesk", sans-serif;
+    margin-left: 50px;
+    margin-top: 100px;
+}
+
+p{
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 20px;
+}
+
+.secciontecnicas{
+    background-image: url(./imagenes/fondo\ de\ TECNICAS.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+}
+
+.navegaciontecnicas ul{
+    background-color: #F9F8EC;
+}
+
+.navegaciontecnicas a{
+    color: black;
+}
+
+.navegacioncontacto a{
+    color: black;
+}
+
+.formulariotexto h1{
+    margin-left: 60px;
+    margin-top: 70px;
+    font-size: 80px;
+    font-family:"Space Grotesk", sans-serif;
+}
+
+form {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 50px;
+    border-radius: 10px;
+    margin: 50px auto;
+    max-width: 400px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f3f3f3;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #aea8a8;
+}

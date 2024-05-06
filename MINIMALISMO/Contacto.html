@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Contacto</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de que la ruta sea correcta -->
+</head>
+<body>
+    <div class="navegacioncontacto">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Historia.html">Historia</a></li>
+                <li><a href="Artistas.html">Artistas</a></li>
+                <li><a href="Habitos.html">Hábitos</a></li>
+                <li><a href="Tecnicas.html">Técnicas</a></li>
+            </ul>
+        </nav>
+        </div>
+    <div class="formulariotexto">
+        <h1>Contacto</h1>
+    </div>
+
+    <form action="#" method="POST">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="email">Correo Electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="mensaje">Mensaje:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea><br><br>
+
+        <label for="motivo">Motivo del Contacto:</label><br>
+        <select id="motivo" name="motivo" required>
+            <option value="" disabled selected>Seleccionar motivo</option>
+            <option value="consulta">Consulta</option>
+            <option value="colaboracion">Colaboración</option>
+            <option value="comentario">Comentario</option>
+        </select><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+</body>
+</html>
